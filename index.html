@@ -4,200 +4,340 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kỷ Niệm 3 Năm Làm Việc Tại Dipro</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <!-- Tailwind CSS via jsdelivr -->
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
+    <!-- Firebase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/firebase@9.22.0/firebase-app-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/firebase@9.22.0/firebase-database-compat.js"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        .result-bar {
+            height: 20px;
+            background-color: #3b82f6;
+            border-radius: 4px;
+            margin-top: 5px;
+            transition: width 0.5s ease-in-out;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        .audio-container {
+            background: linear-gradient(135deg, #e6f2ff 0%, #f0f8ff 100%);
+        }
+        .content-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+        }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans">
-    <div class="container max-w-3xl mx-auto px-4 py-8">
-        <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
-            <h1 class="text-3xl md:text-4xl font-bold text-blue-600 text-center mb-8">🎉 KỶ NIỆM 3 NĂM LÀM VIỆC TẠI DIPRO – TEAM TOKI MÃI ĐỈNH! 🎉</h1>
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <div class="content-gradient shadow-lg rounded-lg p-6 md:p-8">
+            <!-- Header Section -->
+            <div class="text-center mb-8">
+                <h1 class="text-3xl md:text-4xl font-bold text-blue-600 mb-4">🎉 KỶ NIỆM 3 NĂM LÀM VIỆC TẠI DIPRO – TEAM TOKI MÃI ĐỈNH! 🎉</h1>
+                <div class="w-16 h-1 bg-blue-500 mx-auto mb-6"></div>
+            </div>
             
-            <div class="space-y-4 mb-8">
-                <p>Hôm nay đánh dấu tròn 3 năm mình gắn bó cùng Dipro – một hành trình không quá dài, nhưng đủ để chứa đựng biết bao kỷ niệm, cảm xúc và sự trưởng thành.</p>
+            <!-- Content Section -->
+            <div class="mb-8 text-gray-700 leading-relaxed">
+                <p class="mb-4">Hôm nay đánh dấu tròn 3 năm mình gắn bó cùng Dipro – một hành trình không quá dài, nhưng đủ để chứa đựng biết bao kỷ niệm, cảm xúc và sự trưởng thành.</p>
                 
-                <p>Từ những ngày đầu còn bỡ ngỡ, đến hiện tại khi nhìn lại, mình thật sự biết ơn vì đã được là một phần của team Toki – một team không chỉ <span class="text-blue-600 font-bold">"mãi đỉnh"</span> về năng lực, mà còn <span class="text-blue-600 font-bold">"đỉnh của chóp"</span> về tình cảm đồng đội. 🫶</p>
+                <p class="mb-4">Từ những ngày đầu còn bỡ ngỡ, đến hiện tại khi nhìn lại, mình thật sự biết ơn vì đã được là một phần của team Toki – một team không chỉ <span class="text-blue-600 font-semibold">"mãi đỉnh"</span> về năng lực, mà còn <span class="text-blue-600 font-semibold">"đỉnh của chóp"</span> về tình cảm đồng đội. 🫶</p>
                 
-                <p>Ở đây, mình có những người em, những đồng nghiệp, mà thực sự là những người bạn tuyệt vời. Chúng ta đã cùng nhau vượt qua biết bao deadline gấp, những buổi OT không hẹn trước, những lần triển khai hồi hộp, nhưng cũng không thiếu những trận cười nghiêng ngả, những lần ăn chơi hết mình, và cả những phút giây lặng lẽ hỗ trợ nhau phía sau.</p>
+                <p class="mb-4">Ở đây, mình có những người em, những đồng nghiệp, mà thực sự là những người bạn tuyệt vời. Chúng ta đã cùng nhau vượt qua biết bao deadline gấp, những buổi OT không hẹn trước, những lần triển khai hồi hộp, nhưng cũng không thiếu những trận cười nghiêng ngả, những lần ăn chơi hết mình, và cả những phút giây lặng lẽ hỗ trợ nhau phía sau.</p>
                 
-                <p>Ba năm không chỉ là cột mốc thời gian, mà còn là một dấu ấn của sự cố gắng, học hỏi và gắn bó. Mình đã học được rất nhiều, không chỉ về công việc mà còn về cách làm việc nhóm, cách sẻ chia, và nhất là cách trở thành phiên bản tốt hơn của chính mình.</p>
+                <p class="mb-4">Ba năm không chỉ là cột mốc thời gian, mà còn là một dấu ấn của sự cố gắng, học hỏi và gắn bó. Mình đã học được rất nhiều, không chỉ về công việc mà còn về cách làm việc nhóm, cách sẻ chia, và nhất là cách trở thành phiên bản tốt hơn của chính mình.</p>
                 
-                <p>Cảm ơn Dipro đã luôn là một môi trường tuyệt vời để mình phát triển.<br>
+                <p class="mb-4">Cảm ơn Dipro đã luôn là một môi trường tuyệt vời để mình phát triển.<br>
                 Cảm ơn team Toki vì đã luôn "chơi hết mình, làm hết sức", đồng hành cùng nhau qua bao thăng trầm.</p>
                 
-                <p>💙 Mong rằng chặng đường phía trước, mình và mọi người vẫn sẽ tiếp tục cùng nhau tạo nên nhiều điều tuyệt vời hơn nữa!</p>
+                <p class="mb-4">💙 Mong rằng chặng đường phía trước, mình và mọi người vẫn sẽ tiếp tục cùng nhau tạo nên nhiều điều tuyệt vời hơn nữa!</p>
                 
                 <div class="text-blue-600 font-bold mt-6">
                     #Dipro #TeamTokiMãiĐỉnh #3YearsAnniversary #GratefulJourney #WeAreOne
                 </div>
             </div>
             
-            <div class="bg-blue-50 rounded-lg p-6 mt-8">
-                <h2 class="text-2xl font-bold text-blue-700 mb-6">Những bài hát kỷ niệm</h2>
-                <p class="mb-4 text-blue-600 italic">Bình chọn bài hát bạn thích nhất!</p>
+            <!-- Audio Player Section -->
+            <div class="audio-container rounded-lg p-6 mb-8">
+                <h2 class="text-2xl font-bold text-blue-700 mb-4">Những bài hát kỷ niệm</h2>
+                <p class="mb-6 text-gray-600">Bình chọn bài hát yêu thích của bạn bên dưới! Bạn có thể bình chọn nhiều bài.</p>
                 
-                <div class="space-y-8">
-                    <!-- Song 1 -->
-                    <div class="bg-white rounded-lg p-4 shadow-md">
-                        <div class="font-bold text-blue-700 text-lg mb-2">Ba Năm Một Nhà - Orange</div>
-                        <audio controls class="w-full mb-3">
-                            <source src="audio/BaNamMotNha_RnB_Female_OK.mp3" type="audio/mpeg">
-                            Trình duyệt của bạn không hỗ trợ phát nhạc.
-                        </audio>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-                                <button onclick="voteForSong(0)" class="vote-btn bg-blue-500 hover:bg-blue-600 text-white rounded-full px-4 py-2 transition duration-300 flex items-center">
-                                    <i class="fas fa-heart mr-2"></i> Bình chọn
-                                </button>
-                                <div class="ml-4 text-blue-800 font-bold">
-                                    <span id="song0-votes">0</span> lượt bình chọn
-                                </div>
-                            </div>
-                            <div class="text-sm text-gray-500" id="song0-percent">0%</div>
-                        </div>
+                <div class="mb-4">
+                    <div id="loading" class="text-center text-blue-600 italic mb-6">
+                        <i class="fas fa-spinner fa-spin mr-2"></i> Đang tải dữ liệu bình chọn...
                     </div>
                     
-                    <!-- Song 2 -->
-                    <div class="bg-white rounded-lg p-4 shadow-md">
-                        <div class="font-bold text-blue-700 text-lg mb-2">Ba Năm Một Nhà - Sobin</div>
-                        <audio controls class="w-full mb-3">
-                            <source src="audio/BaNamMotNha_RnB_Male_OK.mp3" type="audio/mpeg">
-                            Trình duyệt của bạn không hỗ trợ phát nhạc.
-                        </audio>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-                                <button onclick="voteForSong(1)" class="vote-btn bg-blue-500 hover:bg-blue-600 text-white rounded-full px-4 py-2 transition duration-300 flex items-center">
-                                    <i class="fas fa-heart mr-2"></i> Bình chọn
-                                </button>
-                                <div class="ml-4 text-blue-800 font-bold">
-                                    <span id="song1-votes">0</span> lượt bình chọn
-                                </div>
-                            </div>
-                            <div class="text-sm text-gray-500" id="song1-percent">0%</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Song 3 -->
-                    <div class="bg-white rounded-lg p-4 shadow-md">
-                        <div class="font-bold text-blue-700 text-lg mb-2">Ba Năm Một Nhà - Orange ft Sobin</div>
-                        <audio controls class="w-full mb-3">
-                            <source src="audio/BaNamMotNha_RnB_Feat_OK.mp3" type="audio/mpeg">
-                            Trình duyệt của bạn không hỗ trợ phát nhạc.
-                        </audio>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-                                <button onclick="voteForSong(2)" class="vote-btn bg-blue-500 hover:bg-blue-600 text-white rounded-full px-4 py-2 transition duration-300 flex items-center">
-                                    <i class="fas fa-heart mr-2"></i> Bình chọn
-                                </button>
-                                <div class="ml-4 text-blue-800 font-bold">
-                                    <span id="song2-votes">0</span> lượt bình chọn
-                                </div>
-                            </div>
-                            <div class="text-sm text-gray-500" id="song2-percent">0%</div>
-                        </div>
+                    <div class="mb-4">
+                        <input type="text" id="voterName" placeholder="Tên của bạn (tùy chọn)" 
+                            class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-64">
                     </div>
                 </div>
                 
-                <div class="mt-6 bg-blue-100 p-4 rounded-lg text-sm text-blue-700">
-                    <p id="vote-message" class="hidden"></p>
-                    <p id="total-votes" class="font-medium">Tổng số lượt bình chọn: 0</p>
+                <!-- Song 1 -->
+                <div class="mb-8 p-4 bg-white rounded-lg shadow-sm" id="song1">
+                    <div class="font-bold text-blue-700 mb-2">Bài hát 1</div>
+                    <audio controls class="w-full mb-3">
+                        <source src="audio/song1.mp3" type="audio/mpeg">
+                        Trình duyệt của bạn không hỗ trợ phát nhạc.
+                    </audio>
+                    <div class="flex items-center">
+                        <button class="vote-button bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md mr-3 transition duration-200 flex items-center" data-song="1">
+                            <i class="fas fa-heart mr-2"></i> Bình chọn
+                        </button>
+                        <div class="vote-count font-bold text-blue-600"><span id="vote-count-1">0</span> <i class="fas fa-thumbs-up ml-1"></i></div>
+                        <div class="thank-you hidden ml-3 text-green-600"><i class="fas fa-check-circle mr-1"></i> Đã bình chọn!</div>
+                    </div>
                 </div>
                 
-                <div class="mt-6">
-                    <h3 class="text-lg font-bold text-blue-700 mb-2">Biểu đồ bình chọn</h3>
-                    <div class="bg-gray-200 rounded-full h-6 overflow-hidden">
-                        <div class="flex h-full">
-                            <div id="song0-bar" class="bg-red-500 h-full" style="width: 0%"></div>
-                            <div id="song1-bar" class="bg-green-500 h-full" style="width: 0%"></div>
-                            <div id="song2-bar" class="bg-blue-500 h-full" style="width: 0%"></div>
-                        </div>
+                <!-- Song 2 -->
+                <div class="mb-8 p-4 bg-white rounded-lg shadow-sm" id="song2">
+                    <div class="font-bold text-blue-700 mb-2">Bài hát 2</div>
+                    <audio controls class="w-full mb-3">
+                        <source src="audio/song2.mp3" type="audio/mpeg">
+                        Trình duyệt của bạn không hỗ trợ phát nhạc.
+                    </audio>
+                    <div class="flex items-center">
+                        <button class="vote-button bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md mr-3 transition duration-200 flex items-center" data-song="2">
+                            <i class="fas fa-heart mr-2"></i> Bình chọn
+                        </button>
+                        <div class="vote-count font-bold text-blue-600"><span id="vote-count-2">0</span> <i class="fas fa-thumbs-up ml-1"></i></div>
+                        <div class="thank-you hidden ml-3 text-green-600"><i class="fas fa-check-circle mr-1"></i> Đã bình chọn!</div>
                     </div>
-                    <div class="flex justify-between mt-2 text-sm">
-                        <div class="flex items-center"><span class="w-3 h-3 bg-red-500 inline-block mr-1 rounded-sm"></span> Ba Năm Một Nhà - Orange</div>
-                        <div class="flex items-center"><span class="w-3 h-3 bg-green-500 inline-block mr-1 rounded-sm"></span> Ba Năm Một Nhà - Sobin</div>
-                        <div class="flex items-center"><span class="w-3 h-3 bg-blue-500 inline-block mr-1 rounded-sm"></span> Ba Năm Một Nhà - Orange ft Sobin</div>
+                </div>
+                
+                <!-- Song 3 -->
+                <div class="mb-8 p-4 bg-white rounded-lg shadow-sm" id="song3">
+                    <div class="font-bold text-blue-700 mb-2">Bài hát 3</div>
+                    <audio controls class="w-full mb-3">
+                        <source src="audio/song3.mp3" type="audio/mpeg">
+                        Trình duyệt của bạn không hỗ trợ phát nhạc.
+                    </audio>
+                    <div class="flex items-center">
+                        <button class="vote-button bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md mr-3 transition duration-200 flex items-center" data-song="3">
+                            <i class="fas fa-heart mr-2"></i> Bình chọn
+                        </button>
+                        <div class="vote-count font-bold text-blue-600"><span id="vote-count-3">0</span> <i class="fas fa-thumbs-up ml-1"></i></div>
+                        <div class="thank-you hidden ml-3 text-green-600"><i class="fas fa-check-circle mr-1"></i> Đã bình chọn!</div>
+                    </div>
+                </div>
+                
+                <!-- Voting Results Section -->
+                <div id="voting-results" class="bg-blue-50 p-5 rounded-lg mt-6">
+                    <div class="font-bold text-blue-700 mb-4 text-lg">Kết quả bình chọn</div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <div>Bài hát 1:</div>
+                            <div><span id="result-count-1">0</span> phiếu</div>
+                        </div>
+                        <div class="result-bar" id="result-bar-1" style="width: 0%"></div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <div>Bài hát 2:</div>
+                            <div><span id="result-count-2">0</span> phiếu</div>
+                        </div>
+                        <div class="result-bar" id="result-bar-2" style="width: 0%"></div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-1">
+                            <div>Bài hát 3:</div>
+                            <div><span id="result-count-3">0</span> phiếu</div>
+                        </div>
+                        <div class="result-bar" id="result-bar-3" style="width: 0%"></div>
+                    </div>
+                    
+                    <div class="text-center text-gray-600 italic mt-4">
+                        Tổng số phiếu bầu: <span id="total-votes">0</span>
+                    </div>
+                    
+                    <div class="mt-6 border-t pt-4 border-blue-200">
+                        <div class="text-blue-700 font-semibold mb-2">Bình chọn gần đây:</div>
+                        <ul id="voters-list" class="text-gray-600 text-sm"></ul>
                     </div>
                 </div>
             </div>
             
-            <footer class="mt-8 text-center text-gray-500 text-sm">
+            <!-- Footer -->
+            <footer class="text-center text-gray-500 text-sm mt-8">
                 <p>© 2025 - Kỷ niệm 3 năm tại Dipro</p>
             </footer>
         </div>
     </div>
 
     <script>
-        // Initialize votes array and user voted status
-        let votes = [0, 0, 0];
-        let hasVoted = false;
+        // Firebase configuration - YOU NEED TO REPLACE THIS WITH YOUR OWN FIREBASE CONFIG
+        const firebaseConfig = {
+            apiKey: "AIzaSyCLlaHjsaJXF8eeLwVmbvpfy5jfjsNvKls",
+            authDomain: "dipro-anniversary.firebaseapp.com",
+            databaseURL: "https://dipro-anniversary-default-rtdb.firebaseio.com",
+            projectId: "dipro-anniversary",
+            storageBucket: "dipro-anniversary.firebasestorage.app",
+            messagingSenderId: "757623457189",
+            appId: "1:757623457189:web:2ac4919a14b899064c144c"
+        };
         
-        // Load votes from localStorage if available
-        function loadVotes() {
-            const savedVotes = localStorage.getItem('diproVotes');
-            if (savedVotes) {
-                votes = JSON.parse(savedVotes);
-                updateVoteDisplay();
-            }
-            
-            // Check if user has already voted
-            hasVoted = localStorage.getItem('diproHasVoted') === 'true';
-            if (hasVoted) {
-                disableVoteButtons();
-                document.getElementById('vote-message').textContent = 'Bạn đã bình chọn rồi. Cảm ơn bạn đã tham gia!';
-                document.getElementById('vote-message').classList.remove('hidden');
-            }
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+        
+        // Reference to votes in database
+        const votesRef = database.ref('votes');
+        const votersRef = database.ref('voters');
+        
+        // Generate a unique ID for this user if not already stored
+        let userId = localStorage.getItem('userId') || generateUserId();
+        let userVotes = JSON.parse(localStorage.getItem('userVotes') || '[]');
+        let votes = {1: 0, 2: 0, 3: 0};
+        
+        function generateUserId() {
+            const id = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+            localStorage.setItem('userId', id);
+            return id;
         }
         
-        // Vote for a song
-        function voteForSong(songIndex) {
-            if (hasVoted) {
-                alert('Bạn đã bình chọn rồi!');
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event listeners to vote buttons
+            document.querySelectorAll('.vote-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const songId = this.getAttribute('data-song');
+                    vote(songId);
+                });
+            });
+            
+            // Listen for vote updates
+            votesRef.on('value', (snapshot) => {
+                const data = snapshot.val() || {song1: 0, song2: 0, song3: 0};
+                votes = {
+                    1: data.song1 || 0,
+                    2: data.song2 || 0,
+                    3: data.song3 || 0
+                };
+                
+                // Update vote counts
+                document.getElementById('vote-count-1').textContent = votes[1];
+                document.getElementById('vote-count-2').textContent = votes[2];
+                document.getElementById('vote-count-3').textContent = votes[3];
+                
+                // Update results
+                updateResults();
+                
+                // Hide loading message
+                document.getElementById('loading').style.display = 'none';
+            });
+            
+            // Listen for voter updates
+            votersRef.orderByChild('timestamp').limitToLast(10).on('value', (snapshot) => {
+                const votersList = document.getElementById('voters-list');
+                votersList.innerHTML = '';
+                
+                const data = snapshot.val() || {};
+                const voters = Object.values(data).sort((a, b) => b.timestamp - a.timestamp);
+                
+                voters.forEach(voter => {
+                    const li = document.createElement('li');
+                    li.className = "mb-1 flex items-center";
+                    const name = voter.name || 'Ẩn danh';
+                    const song = voter.song;
+                    li.innerHTML = `<i class="fas fa-user-circle mr-1 text-blue-500"></i> ${name} đã bình chọn cho Bài hát ${song}`;
+                    votersList.appendChild(li);
+                });
+            });
+            
+            // Mark already voted songs
+            updateVoteButtonsState();
+        });
+        
+        function vote(songId) {
+            // Check if user has already voted for this song
+            if (userVotes.includes(songId)) {
                 return;
             }
             
-            votes[songIndex]++;
-            hasVoted = true;
+            // Get voter name (optional)
+            const voterName = document.getElementById('voterName').value.trim() || 'Ẩn danh';
             
-            // Save to localStorage
-            localStorage.setItem('diproVotes', JSON.stringify(votes));
-            localStorage.setItem('diproHasVoted', 'true');
+            // Update vote in database
+            const updates = {};
+            updates[`song${songId}`] = firebase.database.ServerValue.increment(1);
+            votesRef.update(updates);
             
-            // Update display
-            updateVoteDisplay();
-            disableVoteButtons();
+            // Record voter info
+            const voterInfo = {
+                userId: userId,
+                name: voterName,
+                song: songId,
+                timestamp: firebase.database.ServerValue.TIMESTAMP
+            };
+            votersRef.push(voterInfo);
             
-            // Show message
-            document.getElementById('vote-message').textContent = 'Cảm ơn bạn đã bình chọn!';
-            document.getElementById('vote-message').classList.remove('hidden');
+            // Update local storage
+            userVotes.push(songId);
+            localStorage.setItem('userVotes', JSON.stringify(userVotes));
+            
+            // Update UI
+            updateVoteButtonsState();
+            
+            // Show thank you message with animation
+            const thankYouEl = document.querySelector(`#song${songId} .thank-you`);
+            thankYouEl.classList.remove('hidden');
+            thankYouEl.classList.add('pulse-animation');
+            
+            // Add voted class to the song container
+            document.getElementById(`song${songId}`).classList.add('bg-blue-50');
+            document.getElementById(`song${songId}`).classList.add('border-l-4');
+            document.getElementById(`song${songId}`).classList.add('border-blue-500');
         }
         
-        // Update the vote display
-        function updateVoteDisplay() {
-            const totalVotes = votes.reduce((a, b) => a + b, 0);
-            
-            // Update total votes
-            document.getElementById('total-votes').textContent = `Tổng số lượt bình chọn: ${totalVotes}`;
-            
-            // Update each song's votes and percentage
-            for (let i = 0; i < 3; i++) {
-                document.getElementById(`song${i}-votes`).textContent = votes[i];
-                const percent = totalVotes > 0 ? Math.round((votes[i] / totalVotes) * 100) : 0;
-                document.getElementById(`song${i}-percent`).textContent = `${percent}%`;
-                document.getElementById(`song${i}-bar`).style.width = `${percent}%`;
-            }
-        }
-        
-        // Disable all vote buttons
-        function disableVoteButtons() {
-            const buttons = document.querySelectorAll('.vote-btn');
-            buttons.forEach(btn => {
-                btn.classList.remove('bg-blue-500', 'hover:bg-blue-600');
-                btn.classList.add('bg-gray-400', 'cursor-not-allowed');
-                btn.disabled = true;
+        function updateVoteButtonsState() {
+            // Update all vote buttons based on user's votes
+            userVotes.forEach(songId => {
+                const button = document.querySelector(`.vote-button[data-song="${songId}"]`);
+                const thankYouEl = document.querySelector(`#song${songId} .thank-you`);
+                
+                if (button) {
+                    button.disabled = true;
+                    button.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+                    button.classList.add('bg-gray-400', 'cursor-not-allowed');
+                }
+                
+                if (thankYouEl) {
+                    thankYouEl.classList.remove('hidden');
+                }
+                
+                // Mark song container
+                document.getElementById(`song${songId}`).classList.add('bg-blue-50');
+                document.getElementById(`song${songId}`).classList.add('border-l-4');
+                document.getElementById(`song${songId}`).classList.add('border-blue-500');
             });
         }
         
-        // Load votes when page loads
-        window.onload = loadVotes;
+        function updateResults() {
+            // Update result counts
+            document.getElementById('result-count-1').textContent = votes[1];
+            document.getElementById('result-count-2').textContent = votes[2];
+            document.getElementById('result-count-3').textContent = votes[3];
+            
+            // Calculate total votes
+            const totalVotes = votes[1] + votes[2] + votes[3];
+            document.getElementById('total-votes').textContent = totalVotes;
+            
+            // Calculate and update percentages
+            if (totalVotes > 0) {
+                document.getElementById('result-bar-1').style.width = (votes[1] / totalVotes * 100) + '%';
+                document.getElementById('result-bar-2').style.width = (votes[2] / totalVotes * 100) + '%';
+                document.getElementById('result-bar-3').style.width = (votes[3] / totalVotes * 100) + '%';
+            }
+        }
     </script>
 </body>
 </html>
