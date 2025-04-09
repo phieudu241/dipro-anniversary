@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kỷ Niệm 3 Năm Làm Việc Tại Dipro</title>
     <!-- Tailwind CSS via jsdelivr -->
-    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Firebase SDK -->
     <script src="https://cdn.jsdelivr.net/npm/firebase@9.22.0/firebase-app-compat.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/firebase@9.22.0/firebase-database-compat.js"></script>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    
+
     <style>
         .result-bar {
             height: 20px;
@@ -44,43 +43,43 @@
                 <h1 class="text-3xl md:text-4xl font-bold text-blue-600 mb-4">🎉 KỶ NIỆM 3 NĂM LÀM VIỆC TẠI DIPRO – TEAM TOKI MÃI ĐỈNH! 🎉</h1>
                 <div class="w-16 h-1 bg-blue-500 mx-auto mb-6"></div>
             </div>
-            
+
             <!-- Content Section -->
             <div class="mb-8 text-gray-700 leading-relaxed">
                 <p class="mb-4">Hôm nay đánh dấu tròn 3 năm mình gắn bó cùng Dipro – một hành trình không quá dài, nhưng đủ để chứa đựng biết bao kỷ niệm, cảm xúc và sự trưởng thành.</p>
-                
+
                 <p class="mb-4">Từ những ngày đầu còn bỡ ngỡ, đến hiện tại khi nhìn lại, mình thật sự biết ơn vì đã được là một phần của team Toki – một team không chỉ <span class="text-blue-600 font-semibold">"mãi đỉnh"</span> về năng lực, mà còn <span class="text-blue-600 font-semibold">"đỉnh của chóp"</span> về tình cảm đồng đội. 🫶</p>
-                
+
                 <p class="mb-4">Ở đây, mình có những người em, những đồng nghiệp, mà thực sự là những người bạn tuyệt vời. Chúng ta đã cùng nhau vượt qua biết bao deadline gấp, những buổi OT không hẹn trước, những lần triển khai hồi hộp, nhưng cũng không thiếu những trận cười nghiêng ngả, những lần ăn chơi hết mình, và cả những phút giây lặng lẽ hỗ trợ nhau phía sau.</p>
-                
+
                 <p class="mb-4">Ba năm không chỉ là cột mốc thời gian, mà còn là một dấu ấn của sự cố gắng, học hỏi và gắn bó. Mình đã học được rất nhiều, không chỉ về công việc mà còn về cách làm việc nhóm, cách sẻ chia, và nhất là cách trở thành phiên bản tốt hơn của chính mình.</p>
-                
+
                 <p class="mb-4">Cảm ơn Dipro đã luôn là một môi trường tuyệt vời để mình phát triển.<br>
                 Cảm ơn team Toki vì đã luôn "chơi hết mình, làm hết sức", đồng hành cùng nhau qua bao thăng trầm.</p>
-                
+
                 <p class="mb-4">💙 Mong rằng chặng đường phía trước, mình và mọi người vẫn sẽ tiếp tục cùng nhau tạo nên nhiều điều tuyệt vời hơn nữa!</p>
-                
+
                 <div class="text-blue-600 font-bold mt-6">
                     #Dipro #TeamTokiMãiĐỉnh #3YearsAnniversary #GratefulJourney #WeAreOne
                 </div>
             </div>
-            
+
             <!-- Audio Player Section -->
             <div class="audio-container rounded-lg p-6 mb-8">
                 <h2 class="text-2xl font-bold text-blue-700 mb-4">Những bài hát kỷ niệm</h2>
                 <p class="mb-6 text-gray-600">Bình chọn bài hát yêu thích của bạn bên dưới! Bạn có thể bình chọn nhiều bài.</p>
-                
+
                 <div class="mb-4">
                     <div id="loading" class="text-center text-blue-600 italic mb-6">
                         <i class="fas fa-spinner fa-spin mr-2"></i> Đang tải dữ liệu bình chọn...
                     </div>
-                    
+
                     <div class="mb-4">
-                        <input type="text" id="voterName" placeholder="Tên của bạn (tùy chọn)" 
+                        <input type="text" id="voterName" placeholder="Tên của bạn (tùy chọn)"
                             class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-64">
                     </div>
                 </div>
-                
+
                 <!-- Song 1 -->
                 <div class="mb-8 p-4 bg-white rounded-lg shadow-sm" id="song1">
                     <div class="font-bold text-blue-700 mb-2">Ba Năm Một Nhà - Orange</div>
@@ -96,7 +95,7 @@
                         <div class="thank-you hidden ml-3 text-green-600"><i class="fas fa-check-circle mr-1"></i> Đã bình chọn!</div>
                     </div>
                 </div>
-                
+
                 <!-- Song 2 -->
                 <div class="mb-8 p-4 bg-white rounded-lg shadow-sm" id="song2">
                     <div class="font-bold text-blue-700 mb-2">Ba Năm Một Nhà - Sobin</div>
@@ -112,7 +111,7 @@
                         <div class="thank-you hidden ml-3 text-green-600"><i class="fas fa-check-circle mr-1"></i> Đã bình chọn!</div>
                     </div>
                 </div>
-                
+
                 <!-- Song 3 -->
                 <div class="mb-8 p-4 bg-white rounded-lg shadow-sm" id="song3">
                     <div class="font-bold text-blue-700 mb-2">Ba Năm Một Nhà - Orange ft Sobin</div>
@@ -128,11 +127,11 @@
                         <div class="thank-you hidden ml-3 text-green-600"><i class="fas fa-check-circle mr-1"></i> Đã bình chọn!</div>
                     </div>
                 </div>
-                
+
                 <!-- Voting Results Section -->
                 <div id="voting-results" class="bg-blue-50 p-5 rounded-lg mt-6">
                     <div class="font-bold text-blue-700 mb-4 text-lg">Kết quả bình chọn</div>
-                    
+
                     <div class="mb-4">
                         <div class="flex justify-between mb-1">
                             <div>Ba Năm Một Nhà - Orange:</div>
@@ -140,7 +139,7 @@
                         </div>
                         <div class="result-bar" id="result-bar-1" style="width: 0%"></div>
                     </div>
-                    
+
                     <div class="mb-4">
                         <div class="flex justify-between mb-1">
                             <div>Ba Năm Một Nhà - Sobin:</div>
@@ -148,7 +147,7 @@
                         </div>
                         <div class="result-bar" id="result-bar-2" style="width: 0%"></div>
                     </div>
-                    
+
                     <div class="mb-4">
                         <div class="flex justify-between mb-1">
                             <div>Ba Năm Một Nhà - Orange ft Sobin:</div>
@@ -156,18 +155,45 @@
                         </div>
                         <div class="result-bar" id="result-bar-3" style="width: 0%"></div>
                     </div>
-                    
+
                     <div class="text-center text-gray-600 italic mt-4">
                         Tổng số phiếu bầu: <span id="total-votes">0</span>
                     </div>
-                    
+
                     <div class="mt-6 border-t pt-4 border-blue-200">
                         <div class="text-blue-700 font-semibold mb-2">Bình chọn gần đây:</div>
                         <ul id="voters-list" class="text-gray-600 text-sm"></ul>
                     </div>
                 </div>
             </div>
-            
+
+            <!-- Comment Section -->
+            <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+                <h2 class="text-2xl font-bold text-blue-700 mb-4">Chia sẻ cảm nghĩ của bạn</h2>
+                <p class="mb-6 text-gray-600">Hãy để lại lời nhắn hoặc chia sẻ kỷ niệm của bạn về Dipro!</p>
+
+                <div class="mb-4">
+                    <input type="text" id="commentName" placeholder="Tên của bạn (tùy chọn)"
+                        class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-full mb-3">
+                    <textarea id="commentText" placeholder="Nhập lời nhắn của bạn..." rows="4"
+                        class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"></textarea>
+                </div>
+
+                <button id="submitComment" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md transition duration-200 flex items-center">
+                    <i class="fas fa-paper-plane mr-2"></i> Gửi lời nhắn
+                </button>
+
+                <div class="mt-8 border-t pt-6 border-gray-200">
+                    <div class="text-blue-700 font-semibold mb-4">Lời nhắn từ mọi người:</div>
+                    <div id="comments-container" class="space-y-4">
+                        <!-- Comments will be loaded here -->
+                        <div id="comments-loading" class="text-center text-blue-600 italic">
+                            <i class="fas fa-spinner fa-spin mr-2"></i> Đang tải lời nhắn...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Footer -->
             <footer class="text-center text-gray-500 text-sm mt-8">
                 <p>© 2025 - Kỷ niệm 3 năm tại Dipro</p>
@@ -186,26 +212,27 @@
             messagingSenderId: "757623457189",
             appId: "1:757623457189:web:2ac4919a14b899064c144c"
         };
-        
+
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const database = firebase.database();
-        
-        // Reference to votes in database
+
+        // Reference to votes and comments in database
         const votesRef = database.ref('votes');
         const votersRef = database.ref('voters');
-        
+        const commentsRef = database.ref('comments');
+
         // Generate a unique ID for this user if not already stored
         let userId = localStorage.getItem('userId') || generateUserId();
         let userVotes = JSON.parse(localStorage.getItem('userVotes') || '[]');
         let votes = {1: 0, 2: 0, 3: 0};
-        
+
         function generateUserId() {
             const id = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
             localStorage.setItem('userId', id);
             return id;
         }
-        
+
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             // Add click event listeners to vote buttons
@@ -215,7 +242,7 @@
                     vote(songId);
                 });
             });
-            
+
             // Listen for vote updates
             votesRef.on('value', (snapshot) => {
                 const data = snapshot.val() || {song1: 0, song2: 0, song3: 0};
@@ -224,27 +251,27 @@
                     2: data.song2 || 0,
                     3: data.song3 || 0
                 };
-                
+
                 // Update vote counts
                 document.getElementById('vote-count-1').textContent = votes[1];
                 document.getElementById('vote-count-2').textContent = votes[2];
                 document.getElementById('vote-count-3').textContent = votes[3];
-                
+
                 // Update results
                 updateResults();
-                
+
                 // Hide loading message
                 document.getElementById('loading').style.display = 'none';
             });
-            
+
             // Listen for voter updates
             votersRef.orderByChild('timestamp').limitToLast(10).on('value', (snapshot) => {
                 const votersList = document.getElementById('voters-list');
                 votersList.innerHTML = '';
-                
+
                 const data = snapshot.val() || {};
                 const voters = Object.values(data).sort((a, b) => b.timestamp - a.timestamp);
-                
+
                 voters.forEach(voter => {
                     const li = document.createElement('li');
                     li.className = "mb-1 flex items-center";
@@ -254,25 +281,32 @@
                     votersList.appendChild(li);
                 });
             });
-            
+
             // Mark already voted songs
             updateVoteButtonsState();
+
+            // Comment functionality
+            // Add event listener for comment submission
+            document.getElementById('submitComment').addEventListener('click', submitComment);
+
+            // Load comments
+            loadComments();
         });
-        
+
         function vote(songId) {
             // Check if user has already voted for this song
             if (userVotes.includes(songId)) {
                 return;
             }
-            
+
             // Get voter name (optional)
             const voterName = document.getElementById('voterName').value.trim() || 'Ẩn danh';
-            
+
             // Update vote in database
             const updates = {};
             updates[`song${songId}`] = firebase.database.ServerValue.increment(1);
             votesRef.update(updates);
-            
+
             // Record voter info
             const voterInfo = {
                 userId: userId,
@@ -281,64 +315,160 @@
                 timestamp: firebase.database.ServerValue.TIMESTAMP
             };
             votersRef.push(voterInfo);
-            
+
             // Update local storage
             userVotes.push(songId);
             localStorage.setItem('userVotes', JSON.stringify(userVotes));
-            
+
             // Update UI
             updateVoteButtonsState();
-            
+
             // Show thank you message with animation
             const thankYouEl = document.querySelector(`#song${songId} .thank-you`);
             thankYouEl.classList.remove('hidden');
             thankYouEl.classList.add('pulse-animation');
-            
+
             // Add voted class to the song container
             document.getElementById(`song${songId}`).classList.add('bg-blue-50');
             document.getElementById(`song${songId}`).classList.add('border-l-4');
             document.getElementById(`song${songId}`).classList.add('border-blue-500');
         }
-        
+
         function updateVoteButtonsState() {
             // Update all vote buttons based on user's votes
             userVotes.forEach(songId => {
                 const button = document.querySelector(`.vote-button[data-song="${songId}"]`);
                 const thankYouEl = document.querySelector(`#song${songId} .thank-you`);
-                
+
                 if (button) {
                     button.disabled = true;
                     button.classList.remove('bg-blue-600', 'hover:bg-blue-700');
                     button.classList.add('bg-gray-400', 'cursor-not-allowed');
                 }
-                
+
                 if (thankYouEl) {
                     thankYouEl.classList.remove('hidden');
                 }
-                
+
                 // Mark song container
                 document.getElementById(`song${songId}`).classList.add('bg-blue-50');
                 document.getElementById(`song${songId}`).classList.add('border-l-4');
                 document.getElementById(`song${songId}`).classList.add('border-blue-500');
             });
         }
-        
+
         function updateResults() {
             // Update result counts
             document.getElementById('result-count-1').textContent = votes[1];
             document.getElementById('result-count-2').textContent = votes[2];
             document.getElementById('result-count-3').textContent = votes[3];
-            
+
             // Calculate total votes
             const totalVotes = votes[1] + votes[2] + votes[3];
             document.getElementById('total-votes').textContent = totalVotes;
-            
+
             // Calculate and update percentages
             if (totalVotes > 0) {
                 document.getElementById('result-bar-1').style.width = (votes[1] / totalVotes * 100) + '%';
                 document.getElementById('result-bar-2').style.width = (votes[2] / totalVotes * 100) + '%';
                 document.getElementById('result-bar-3').style.width = (votes[3] / totalVotes * 100) + '%';
             }
+        }
+
+        // Comment Functions
+
+        function submitComment() {
+            const commentName = document.getElementById('commentName').value.trim() || 'Ẩn danh';
+            const commentText = document.getElementById('commentText').value.trim();
+
+            if (!commentText) {
+                alert('Vui lòng nhập lời nhắn của bạn!');
+                return;
+            }
+
+            // Create comment object
+            const comment = {
+                name: commentName,
+                text: commentText,
+                userId: userId,
+                timestamp: firebase.database.ServerValue.TIMESTAMP
+            };
+
+            // Push to Firebase
+            commentsRef.push(comment)
+                .then(() => {
+                    // Clear form
+                    document.getElementById('commentText').value = '';
+
+                    // Show success message
+                    const submitBtn = document.getElementById('submitComment');
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i> Đã gửi thành công!';
+                    submitBtn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+                    submitBtn.classList.add('bg-green-600');
+
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.classList.remove('bg-green-600');
+                        submitBtn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                    }, 2000);
+                })
+                .catch(error => {
+                    console.error('Error adding comment: ', error);
+                    alert('Có lỗi xảy ra khi gửi lời nhắn. Vui lòng thử lại!');
+                });
+        }
+
+        function loadComments() {
+            commentsRef.orderByChild('timestamp').limitToLast(20).on('value', (snapshot) => {
+                const commentsContainer = document.getElementById('comments-container');
+                // Remove loading message
+                const loadingEl = document.getElementById('comments-loading');
+                if (loadingEl) {
+                    loadingEl.remove();
+                }
+
+                // Clear existing comments except loading message
+                const existingComments = commentsContainer.querySelectorAll('.comment-item');
+                existingComments.forEach(comment => comment.remove());
+
+                const data = snapshot.val() || {};
+                const comments = Object.values(data).sort((a, b) => b.timestamp - a.timestamp);
+
+                if (comments.length === 0) {
+                    const noComments = document.createElement('div');
+                    noComments.className = 'text-center text-gray-500 italic py-4';
+                    noComments.textContent = 'Chưa có lời nhắn nào. Hãy là người đầu tiên chia sẻ cảm nghĩ của bạn!';
+                    commentsContainer.appendChild(noComments);
+                    return;
+                }
+
+                comments.forEach(comment => {
+                    const commentEl = document.createElement('div');
+                    commentEl.className = 'comment-item bg-blue-50 p-4 rounded-lg';
+
+                    // Format date
+                    const date = new Date(comment.timestamp);
+                    const formattedDate = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()} ${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}`;
+
+                    commentEl.innerHTML = `
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 rounded-full p-2 mr-3">
+                                <i class="fas fa-user text-blue-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center mb-1">
+                                    <div class="font-bold text-blue-700">${comment.name}</div>
+                                    <div class="text-xs text-gray-500">${formattedDate}</div>
+                                </div>
+                                <p class="text-gray-700">${comment.text}</p>
+                            </div>
+                        </div>
+                    `;
+
+                    commentsContainer.appendChild(commentEl);
+                });
+            });
         }
     </script>
 </body>
